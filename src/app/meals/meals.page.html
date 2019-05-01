@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+          Liste des aliments
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      
+      <ion-item *ngFor="let item of meals">
+          <ion-icon name="flask" slot="start"></ion-icon>
+          {{ item.name }}
+          <div class="item-note" slot="end">
+              {{ item.calories }} kcal
+          </div>
+      </ion-item>
+  </ion-list>
+</ion-content>

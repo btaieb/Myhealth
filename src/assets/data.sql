@@ -1,0 +1,3 @@
+CREATE TABLE IF NOT EXISTS meals(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, calories INTEGER, proteins INTEGER, fats INTEGER,carbs INTEGER, fibers INTEGER);
+INSERT or IGNORE INTO meals VALUES (1, 'Escalope de dinde 100g',158,35,1,0,0);
+INSERT or IGNORE INTO meals VALUES (2, 'Crevettes 100g',94,21,0,0,0);
