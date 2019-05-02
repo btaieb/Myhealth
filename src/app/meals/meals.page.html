@@ -21,6 +21,7 @@
           <div class="item-note" slot="end">
               {{ item.calories }} kcal
           </div>
+          <ion-button slot="end" expand="block" (click)="remove(item.id)">-</ion-button>
       </ion-item>
   </ion-list>
 </ion-content>

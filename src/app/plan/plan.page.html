@@ -4,14 +4,44 @@
           <ion-menu-button></ion-menu-button>
       </ion-buttons>
       <ion-title>
-          Mon programme
+          Mes informations
       </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input [(ngModel)]="user.email" placeholder="Email" type="email"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label position="stacked">Genre</ion-label>
+          <ion-select [(ngModel)]="user.gender" placeholder="Choisir...">
+            <ion-select-option value="1">Homme</ion-select-option>
+            <ion-select-option value="2">Femme</ion-select-option>
+            
+          </ion-select>
+        </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Age</ion-label>
+        <ion-input [(ngModel)]="user.age" placeholder="Age" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Poids</ion-label>
+        <ion-input [(ngModel)]="user.weight" placeholder="Poids" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Poids souhaité</ion-label>
+        <ion-input [(ngModel)]="user.weightgoal" placeholder="Poids souhaité" type="number"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Taille</ion-label>
+        <ion-input [(ngModel)]="user.height" placeholder="Taille" type="number"></ion-input>
+      </ion-item>
+      
+      <ion-button expand="block" (click)="save()">Enregistrer</ion-button>
+    
   <ion-list>
-      
-      
   </ion-list>
 </ion-content>

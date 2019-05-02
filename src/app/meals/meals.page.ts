@@ -15,7 +15,10 @@ export class MealsPage implements OnInit {
   constructor(private db: DatabaseService, private router: Router) {}
 
   ngOnInit() {
+    this.load();
+  }
 
+  load() {
     this.db.getDatabaseState().subscribe(rdy => {
       if (rdy) {
          this.db.getMeals().subscribe(p => {
@@ -23,10 +26,20 @@ export class MealsPage implements OnInit {
          });
       }
     });
+
   }
 
   add() {
     this.router.navigateByUrl('/create-meal');
+  }
+
+  remove(id) {
+    this.db.getDatabaseState().subscribe(rdy => {
+      if (rdy) {
+         this.db.deleteMeal(id);
+         this.load();
+      }
+    });
   }
 
 }

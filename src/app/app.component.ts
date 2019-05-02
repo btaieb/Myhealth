@@ -21,7 +21,7 @@ export class AppComponent {
       icon: 'ios-cube'
     },
     {
-      title: 'Mon programme',
+      title: 'Mes informations',
       url: '/plan',
       icon: 'ios-body'
     }

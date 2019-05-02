@@ -156,7 +156,6 @@ export class DatabaseService {
           });
         }
       }
-      
       this.todayMeals.next(p);
     });
 
@@ -228,11 +227,11 @@ export class DatabaseService {
 
   }
 
-  addMeal(name, calories,proteins, fats,carbs, fibers) {
-    let data = [name, calories,proteins, fats,carbs, fibers];
+  addMeal(meal) {
+    const data = [meal.name, meal.calories, meal.proteins, meal.fats, meal.carbs, meal.fibers];
     return this.database
       .executeSql('INSERT INTO meals (name,calories,proteins, fats,carbs, fibers) VALUES (?, ?, ?, ?, ?, ?)', data)
-      .then((data) => {
+      .then(() => {
         this.loadMeals();
       });
   }
@@ -248,14 +247,13 @@ export class DatabaseService {
     let data = [p.name];
     return this.database
       .executeSql(`UPDATE meals SET name = ? WHERE id = ${p.id}`, data)
-      .then((data) => {
+      .then(() => {
         this.loadMeals();
       });
   }
 
   getNeededCalories(): any {
     console.log('[INFO] get needed calories....');
-    
     const query = `SELECT id As id, gender As gender, age As age, weight as weight, weightgoal AS weightgoal, height as height FROM userinfo WHERE id = 1`;
     return this.database.executeSql(query, []).then((data) => {
       let o = {
@@ -266,7 +264,6 @@ export class DatabaseService {
         weightgoal: 0,
         height: 0
       };
-      
       if (data.rows.length > 0) {
         o.id = data.rows.item(0).id;
         o.age = data.rows.item(0).age;
@@ -274,13 +271,44 @@ export class DatabaseService {
         o.gender = data.rows.item(0).gender;
         o.weightgoal = data.rows.item(0).weightgoal;
         o.height = data.rows.item(0).height;
-        
       }
       return o;
-      //console.log(JSON.stringify(o));
-      
-      
     });
+  }
+
+  getUserInfo(): any {
+    console.log('[INFO] get user info....');
+    const query = `SELECT userinfo.id As id, userinfo.email As email, userinfo.gender As gender, userinfo.age As age, userinfo.weight as weight, userinfo.weightgoal AS weightgoal, userinfo.height as height FROM userinfo WHERE id = 1`;
+    return this.database.executeSql(query, []).then((data) => {
+      let o = {
+        id: 0,
+        email:'',
+        weight: 0,
+        gender: 1,
+        age: 0,
+        weightgoal: 0,
+        height: 0
+      };
+      if (data.rows.length > 0) {
+        o.id = data.rows.item(0).id;
+        o.email = data.rows.item(0).email;
+        o.age = data.rows.item(0).age;
+        o.weight = data.rows.item(0).weight;
+        o.gender = data.rows.item(0).gender;
+        o.weightgoal = data.rows.item(0).weightgoal;
+        o.height = data.rows.item(0).height;
+      }
+      return o;
+    });
+  }
+
+  updateUserInfo(user) {
+    
+    let data = [user.email, user.age, user.weight, user.gender, user.weightgoal, user.height];
+    return this.database
+      .executeSql(`UPDATE userinfo SET email = ?, age = ?, weight = ?, gender = ?, weightgoal = ?, height = ?  WHERE id = ${user.id}`, data)
+      .then(() => {
+      });
   }
 
 }
