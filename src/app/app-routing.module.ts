@@ -10,7 +10,9 @@ const routes: Routes = [
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'foods', loadChildren: './foods/foods.module#FoodsPageModule' },
   { path: 'plan', loadChildren: './plan/plan.module#PlanPageModule' },
-  { path: 'meals', loadChildren: './meals/meals.module#MealsPageModule' }
+  { path: 'meals', loadChildren: './meals/meals.module#MealsPageModule' },
+  { path: 'search', loadChildren: './search/search.module#SearchPageModule' },
+  { path: 'create-meal', loadChildren: './create-meal/create-meal.module#CreateMealPageModule' }
 ];
 
 @NgModule({

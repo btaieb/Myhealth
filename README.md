@@ -1,15 +1,33 @@
 # MyHealth
 =======
+## Context
+
+Chaque jour, votre corps a besoin d’énergie pour fonctionner et accomplir correctement ses missions. Cette énergie nous est fournie par les aliments que nous consommons. Et elle s’exprime en calories. 
+
+L’unité de mesure de l’énergie couramment utilisée en nutrition est ce que l’on appelle la kilocalorie (kcal) : 1 kcal = 1 000 calories.
+
+Alors, pour évaluer le "juste" nombre de calories dont vous avez besoin chaque jour pour maintenir votre poids stable, il existe une formule.
+
+Commencez par calculer votre métabolisme de base :
+
+- MALE : 66,5 + (13,75 X poids) + (5 X taille)- (6,77 X âge)
+- FEMALE : 655 + (9,56 X poids) + (1,85 X taille) – (4,67 X âge)
+
+Ensuite, selon votre niveau d’activité, multipliez le chiffre obtenu par :
+
+1,2 si vous avez un travail de bureau ou une faible dépense sportive (profil sédentaire)
+1,375 si vous vous entraînez 1 à 3 fois par semaine (profil profil légèrement actif)
+1,55 si vous vous entraînez 4 à 6 fois par semaine (profil actif)
+1,725 si vous faites quotidiennement du sport ou des exercices physiques soutenus (profil très actif).
 
 ## Tools
 - Visual Studio Code
-- Ionic Cli
-- Ionic Framework
+- Ionic Framework 4 (+Ionic Cli)
+- Angular 7
 - Apache Cordova : Mobile apps with HTML, CSS & JS, 
 Target multiple platforms with one code base, Free and open source
 
-- Cordova plugin for Sqlite Storage
-- Cordova plugin for Firebase Authentication
+- Sqlite + Cordova plugin for Sqlite Storage
 
 
 ## Install Android Studio/Android Sdk
@@ -87,7 +105,7 @@ const routes: Routes = [
 ionic g service services/database
 
 - generate page 
-ionic g page pages/meals
+ionic g page meals
 
 ## Ionic Cordova
 - Run as web application for development (node server)
@@ -115,8 +133,11 @@ chromium
 
 ## Useful Links
 
-https://devdactic.com/ionic-4-sqlite-queries/
-https://www.youtube.com/watch?v=fZ4giHzXfSg
+- https://ionicframework.com/docs
+- https://angular.io/guide/quickstart
+- https://devdactic.com/ionic-4-sqlite-queries/
+- https://www.youtube.com/watch?v=fZ4giHzXfSg
+- 
 
 
 

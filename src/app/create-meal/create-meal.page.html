@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter aliment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Nom aliment</ion-label>
+    <ion-input [(ngModel)]="meal.name" placeholder="Name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Calories</ion-label>
+    <ion-input [(ngModel)]="meal.calories" placeholder="Calories" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Protéines</ion-label>
+    <ion-input [(ngModel)]="meal.proteins" placeholder="Proteins" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Graisse</ion-label>
+    <ion-input [(ngModel)]="meal.fats" placeholder="Graisse" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Glucide</ion-label>
+    <ion-input [(ngModel)]="meal.carbs" placeholder="Glucide" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Fibres</ion-label>
+    <ion-input [(ngModel)]="meal.fibers" placeholder="Fibres" type="number"></ion-input>
+  </ion-item>
+  
+  <ion-button expand="block" (click)="add()">Enregistrer</ion-button>
+
+  
+
+</ion-content>

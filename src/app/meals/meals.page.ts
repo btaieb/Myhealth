@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatabaseService, Meal } from '../services/database.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-meals',
@@ -12,7 +12,7 @@ export class MealsPage implements OnInit {
   private selectedItem: any;
   meals: Meal[] = [];
 
-  constructor(private db: DatabaseService) {}
+  constructor(private db: DatabaseService, private router: Router) {}
 
   ngOnInit() {
 
@@ -23,6 +23,10 @@ export class MealsPage implements OnInit {
          });
       }
     });
+  }
+
+  add() {
+    this.router.navigateByUrl('/create-meal');
   }
 
 }
